@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Node Project</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="page-header">
+      <h1>May Node and Express be with you.</h1>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quotes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i<quotes.length; i++) {%>
+        <tr>
+          <td><%= quotes[i].name.toUpperCase() %></td>
+          <td><%= quotes[i].quote %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+    <form action="/quotes" method="POST" class="form-inline">
+      <div class="form-group">
+        <input type="text" placeholder="name" name="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="quote" name="quote" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <hr>
+
+    <div>
+      <h2>Replace last quote written by Master Yoda with a quote written by Darth Vader</h2>
+      <button id="update" class="btn btn-warning">Darth Vader invades! </button>
+    </div>
+    <div>
+      <h2>Delete Darth Vader's first quote</h2>
+      <button id="delete" class="btn btn-danger">Delete first Darth Vader quote </button>
+    </div>
+
+    <hr>
+
+    <p class="text-right"><%= appName %> v<%= version %></p>
+
+  </div>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
