@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient
 version = require('./version.js'); // grab version file
+require('dotenv').config()
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(version) // use version file in views
 
 var db
 
-MongoClient.connect('mongodb://localhost:27017', (err, database) => {
+MongoClient.connect(process.env.MONGODB_URI, (err, database) => {
   if (err) return console.log(err)
   db = database
 
