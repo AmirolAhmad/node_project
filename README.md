@@ -3,3 +3,6 @@
 ```
 $ npm run dev
 ```
+
+# Author
+Amirol Ahmad
